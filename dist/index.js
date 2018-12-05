@@ -121,7 +121,7 @@ exports.succes = function (msg) {
 };
 exports.info = function (msg) {
     var now = moment().format('HH:mm');
-    console.log(chalk.bgBlue(now + " " + msg));
+    console.log(chalk.blue(now + " " + msg));
 };
 exports.error = function (msg) {
     var now = moment().format('HH:mm');
@@ -204,7 +204,7 @@ exports.default = (function () {
     index_1.default.forEach(function (endpoints) {
         endpoints();
     });
-    logger_1.succes('API chargée');
+    logger_1.info('API chargée');
     //oon boucle su rle tableau des endpoint pou rinitialiser les routes
 });
 

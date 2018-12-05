@@ -7,7 +7,7 @@ export default ()=>{
         endpoints();
     })
 
-    succes('API chargée');
+    info('API chargée');
     //oon boucle su rle tableau des endpoint pou rinitialiser les routes
 
 

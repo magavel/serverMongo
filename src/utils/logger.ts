@@ -24,7 +24,7 @@ export const succes=(msg)=>{
 
 export const info=(msg)=>{
     const now = moment().format('HH:mm');
-    console.log(chalk.bgBlue(`${now} ${msg}`));
+    console.log(chalk.blue(`${now} ${msg}`));
 
 }
 

@@ -7,7 +7,14 @@ Postman
 
 
 ##config base de données
+
+user avel
+
+mdp 123
+
+
 Avec studio 3T se connecter sur la base de données et créer une bdd 
+
 nom: miw
 
 collection : products
@@ -34,7 +41,9 @@ document:
 ##Commandes de demmarages
 
 mongod permet de démarrer le seerveur de données mongo
+nmp install pour installer toutes les dependances
 
+npm start ==> demare le server node
 
 
 

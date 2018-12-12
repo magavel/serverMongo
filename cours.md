@@ -38,14 +38,14 @@ document:
     }
 
 
-##Commandes de demmarages
+##Commandes de demarages
 
 mongod permet de démarrer le seerveur de données mongo
 nmp install pour installer toutes les dependances
 
 npm start ==> demare le server node
 
-
+mongo ==> démarre le serveur node
 
 
 

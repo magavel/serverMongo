@@ -223,7 +223,7 @@ exports.default = (function () {
         }
     });
     index_1.appRouter.post('/product/insert/:code', function (req, res) {
-        console.log(" le code en get " + req.params.code + " et post " + req.body);
+        console.log(" le code en get " + req.params.code + " et post " + req.body.name);
         try {
             //donnee a inserer ds le req.body
             models_1.productModel.updateOne({ code: req.params.code }, //querydu code = req.params.code

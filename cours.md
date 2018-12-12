@@ -6,6 +6,16 @@ Studio 3T
 Postman
 
 
+##dependance utilisées
+
+multer  gestion des fichiers
+
+avec commande  npm install multer --save
+
+et on import avec la commande 
+
+    import * as multer from 'multer';
+
 ##config base de données
 
 user avel
@@ -40,12 +50,13 @@ document:
 
 ##Commandes de demarages
 
-mongod permet de démarrer le seerveur de données mongo
+mongod permet de démarrer le serveur de données mongo
+
 nmp install pour installer toutes les dependances
 
-npm start ==> demare le server node
+npm start ==> démarre le server node
 
-mongo ==> démarre le serveur node
+mongod ==> démarre le serveur node
 
 
 
@@ -95,3 +106,46 @@ la promesse permet de remplacer les callback pour eviter les callback hell
             }, 2000);
         });
     }
+
+
+
+voir asyn et away ds les promesses
+
+postman
+
+pour envoyer un fichier
+methode post et cliquer sur form-data et selectionner file
+
+attention à la key  doit être identique  au paramètre de single
+attention à ne pas mettre d'espace 
+
+        const formConfig= multer().single('photo');
+        
+
+
+
+pour ajouter des fichiers dans node on utilise le module fs ==> file system
+
+on doit l'importer
+
+    import * as fs from 'fs';
+
+
+
+
+
+
+pour supprimer un fichier on utilise $pull
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,13 @@
 //
 import * as mongoose from 'mongoose';
 
-//il faut definir le schema de la collection product
-//permet de valider le format des donnes de mongo
+//il faut définir le schema de la collection product
+//permet de valider le format des données de mongo
 
 
 const productSchema = new mongoose.Schema({
     _id: String,
+    images: [String],
     code:Number,
     name: String,
     description: String,
@@ -22,7 +23,31 @@ const productSchema = new mongoose.Schema({
     }
 });
 
-//creation du model associée
+//création du model associé
+
+
+
+//creer un schema pour les commentaire "commentSchema"
+//date entier
+//code entier
+//name string
+//message string
+
+const commentSchema = new mongoose.Schema({
+    date: Number,
+    code:Number,
+    name: String,
+    message: String
+
+});
+
+
+export const commentModel = mongoose.model(
+  'comments',
+  commentSchema,
+  'comments'
+);
+
 
 export const productModel = mongoose.model(
     'products',

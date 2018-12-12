@@ -14,10 +14,14 @@ app.use(appRouter);
 // on configure body parser pour des recup des post
 appRouter.use(bodyParser.urlencoded({extended:true}));
 
+// on sert les fichiers presents ds le rep static
+
+appRouter.use('/static', express.static('static'));
+
 export default ()=>{
   app.listen(7851,()=>{
     //on fait ecoutter notre serveur
-      //callback execiter dans il entend
+      //callback executer dans il entend
     succes('serveur demarré et oui');
         api()
 

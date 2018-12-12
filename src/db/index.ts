@@ -23,7 +23,7 @@ function connect() {
 export default ()=>{
     //connexion a la base de donnée par promesses
     return new Promise((resolve, reject)=>{
-       //on configure mongoose pour fonctionner avec les prmesse au lieu des call back
+       //on configure mongoose pour fonctionner avec les promesses au lieu des call back
         (mongoose.Promise as any)=global.Promise;
         //on assigne la connexion a la variable db
         db=mongoose.connection;
@@ -43,7 +43,7 @@ export default ()=>{
             }, 5000);
         });
         //losque l'on est connecté à la base de données
-        //once est listener qui s"execite une seule fois
+        //once est listener qui s"execute une seul fois
         db.once('open', ()=>{
             succes('connection à la base de données');
             // et on resout la promesse

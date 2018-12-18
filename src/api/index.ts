@@ -5,16 +5,16 @@ import db from '../db/index';
 //import de la connexion db
 
 export default ()=>{
-    //on execute la connexion
+    //on execute la connexion par db
     db()
         .then(()=>{
 
-            endpoints.forEach((endpoints) =>{
+            endpoints.forEach((endpoints) =>{ // on charge toutes les routes via un tableau qui vient du fichier index.ts de endpoints
                 endpoints();
             })
 
             info('API chargée');
-            //oon boucle su rle tableau des endpoint pou rinitialiser les routes
+            //on boucle sur le tableau des endpoint pou réinitialiser les routes
 
         });
 

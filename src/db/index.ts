@@ -43,9 +43,9 @@ export default ()=>{
             }, 5000);
         });
         //losque l'on est connecté à la base de données
-        //once est listener qui s"execute une seul fois
+        //once est un listener qui s"execute une seul fois
         db.once('open', ()=>{
-            succes('connection à la base de données');
+            succes('connection OK à la base de données');
             // et on resout la promesse
             return resolve();
         });

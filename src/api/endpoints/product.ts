@@ -125,7 +125,7 @@ export default ()=>{
                 //on considere que le fichier est valide et on le stoque sur le serveur
                 const fileName = `${Date.now()}-${req.file.originalname}`;
                 fs.writeFile(
-                    `./static/images${fileName}`, // nom du chemin complet
+                    `./static/images/${fileName}`, // nom du chemin complet
                     req.file.buffer,   //donnees a ecrire
                     (err)=>{   //callback avce erreur potentiel
                         if(err){

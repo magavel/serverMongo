@@ -18,19 +18,19 @@ const chalk = Chalk.constructor();
 //    --->  ds chzcune des methode   console.log(chalk(heure +message)
 export const succes=(msg)=>{
     const now = moment().format('HH:mm');
-     console.log(chalk.green(`${now} ${msg}`));
+     console.log(chalk.green(`${now}:  ${msg}`));
 
 }
 
 export const info=(msg)=>{
     const now = moment().format('HH:mm');
-    console.log(chalk.blue(`${now} ${msg}`));
+    console.log(chalk.blue(`${now}:  ${msg}`));
 
 }
 
 export const error=(msg)=>{
     const now = moment().format('HH:mm');
-    console.log(chalk.red(`${now} ${msg}`));
+    console.log(chalk.red(`${now}:  ${msg}`));
 
 }
 

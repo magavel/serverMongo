@@ -74,7 +74,7 @@
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var Chalk = __webpack_require__(11);
-var moment = __webpack_require__(13);
+var moment = __webpack_require__(14);
 var chalk = Chalk.constructor();
 //exporter 3 fonction
 // 1: succes -> param msg (string)
@@ -88,15 +88,15 @@ var chalk = Chalk.constructor();
 //    --->  ds chzcune des methode   console.log(chalk(heure +message)
 exports.succes = function (msg) {
     var now = moment().format('HH:mm');
-    console.log(chalk.green(now + " " + msg));
+    console.log(chalk.green(now + ":  " + msg));
 };
 exports.info = function (msg) {
     var now = moment().format('HH:mm');
-    console.log(chalk.blue(now + " " + msg));
+    console.log(chalk.blue(now + ":  " + msg));
 };
 exports.error = function (msg) {
     var now = moment().format('HH:mm');
-    console.log(chalk.red(now + " " + msg));
+    console.log(chalk.red(now + ":  " + msg));
 };
 
 
@@ -115,6 +115,29 @@ var logger_1 = __webpack_require__(0);
 var app = express();
 //instantiation router et on l'export
 exports.appRouter = express.Router();
+/**
+
+ Vous commencez par demander l'inclusion d'Express et vous créez un objet app en appelant la fonction express().
+
+ Ensuite, il vous suffit d'indiquer les différentes routes (les différentes URL) à laquelle
+ votre application doit répondre. Ici, j'ai créé une seule route,
+ la racine "/".
+ Une fonction de callback est appelée quand quelqu'un demande cette route.
+
+
+ exemple
+ var express = require('express');
+
+ var app = express();
+
+ app.get('/', function(req, res) {
+    res.setHeader('Content-Type', 'text/plain');
+    res.send('Vous êtes à l\'accueil');
+});
+
+ app.listen(8080);
+
+*/
 //on dit a app de utiliser le router cest un middleware
 app.use(exports.appRouter);
 // on configure body parser pour des recup des post
@@ -126,6 +149,7 @@ exports.default = (function () {
         //on fait ecoutter notre serveur
         //callback executer dans il entend
         logger_1.succes('serveur demarré et oui');
+        // on demarre l'api
         index_1.default();
     });
 });
@@ -138,8 +162,8 @@ exports.default = (function () {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var multer = __webpack_require__(14);
-var fs = __webpack_require__(15);
+var multer = __webpack_require__(15);
+var fs = __webpack_require__(13);
 var index_1 = __webpack_require__(1);
 var models_1 = __webpack_require__(3); // on import le model de la bdd
 var logger_1 = __webpack_require__(0);
@@ -253,7 +277,7 @@ exports.default = (function () {
             //return res.send('ok')
             //on considere que le fichier est valide et on le stoque sur le serveur
             var fileName = Date.now() + "-" + req.file.originalname;
-            fs.writeFile("./static/images" + fileName, // nom du chemin complet
+            fs.writeFile("./static/images/" + fileName, // nom du chemin complet
             req.file.buffer, //donnees a ecrire
             function (err) {
                 if (err) {
@@ -585,9 +609,9 @@ exports.default = (function () {
             }, 5000);
         });
         //losque l'on est connecté à la base de données
-        //once est listener qui s"execute une seul fois
+        //once est un listener qui s"execute une seul fois
         exports.db.once('open', function () {
-            logger_1.succes('connection à la base de données');
+            logger_1.succes('connection OK à la base de données');
             // et on resout la promesse
             return resolve();
         });
@@ -619,19 +643,19 @@ module.exports = require("express");
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = require("moment");
+module.exports = require("fs");
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
-module.exports = require("multer");
+module.exports = require("moment");
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = require("fs");
+module.exports = require("multer");
 
 /***/ })
 /******/ ])));

@@ -15,7 +15,12 @@ avec commande  npm install multer --save
 et on import avec la commande 
 
     import * as multer from 'multer';
+## Installer mongo db
 
+installation mac
+
+    brew install mongodb
+    
 ##config base de données
 
 user avel
